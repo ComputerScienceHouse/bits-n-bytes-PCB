@@ -1,0 +1,17 @@
+# KiCad automatic backups
+*.kicad_sch-bak
+*.kicad_pcb-bak
+fp-lib-table.bak
+sym-lib-table.bak
+
+# Auto-generated netlists and caches
+*.net
+*.cmp
+*.lst
+*.pro-user
+*.kicad_prl
+*.kicad_lock
+
+# KiCad 3D cache directories
+3D_cache/
+*.3dcache
