@@ -1,0 +1,71 @@
+(kicad_sch
+	(version 20260306)
+	(generator "eeschema")
+	(generator_version "10.0")
+	(uuid "cf9e016e-f024-4a81-8419-1da3c34b3b6d")
+	(paper "A4")
+	(lib_symbols)
+	(text "Bits N' Bytes \nRasperry PI \n40 Pin Expansion Header HAT"
+		(exclude_from_sim no)
+		(at 151.638 54.864 0)
+		(effects
+			(font
+				(size 6.35 6.35)
+				(thickness 0.7938)
+			)
+		)
+		(uuid "eeb9dce8-04a1-48db-a0f4-5aa56ca74b4e")
+	)
+	(sheet
+		(at 121.92 91.44)
+		(size 55.88 54.61)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "8ffda9eb-5242-46d5-aeda-1c2826c356b7")
+		(property "Sheetname" "PI-HAT"
+			(at 121.92 90.7284 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "pihat-26.kicad_sch"
+			(at 121.92 146.6346 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "pi-hat"
+				(path "/cf9e016e-f024-4a81-8419-1da3c34b3b6d"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
