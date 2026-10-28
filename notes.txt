@@ -145,12 +145,32 @@ https://www.digikey.com/en/products/detail/molex/0039281023/61397
 
 
 
+ADD: ESD PROTECTION TO THE BOARDS
 
 
 
+Jetson Orin Nano Dev Kit:
+https://dam-cdn.nvd.orangelogic.com/AssetLink/2ug686w80406gxf6q8uv7r3l7265m2n8.pdf
+103mm x 90.5mm x 34.77mm
 
+Jetson HAT PLAN:
 
-
+Not enough UART, want more UART.
+This can be done by doing UART through SPI / I2C, there can be an STM32 on the HAT
+that translates the UART through the SPI or I2C lines.
+  What does this do?
+    Altas code remains the same, still communicates through UART
+    STM32 handles the transfer from UART -> SPI or I2C
+    Jetson has code that breaks the data down from SPI or I2C into whatever it needs.
+  
+  Why this over what is currently being done?
+    Currently we are connecting two USB->UART peripherals to the Jetson.
+    This is dumb, USB is like important, and can sooo much more than just one UART.
+    Current solution is also ugly
+    This steamlines everything into the HAT, looks more professional, and the code
+    changes wouldn't be severe, just have the STM32 send the data in a nice format
+    like JSON, and read from it, just like how the UART is doing it.
+    A way more professional solution than the UART->USB
 
 
 
