@@ -183,6 +183,17 @@ I am leaning towards spending the extra 3-4 freedom dabloons if it means less tr
 
 
 
+SC16IS752 WIRING
+
+- Only need TXA/B,RXA/B for UART, other stuff can be ignored
+- XTAL1, XTAL2 is frq crystal, gonna need to figure that out
+- The SPI pins are just going to the coresponding pins from the header
+
+- I2C/SPI pin should be grounded for SPI
+- IRQ is an interrupt pin, tie to a GPIO
+
+
+
 
 
 
