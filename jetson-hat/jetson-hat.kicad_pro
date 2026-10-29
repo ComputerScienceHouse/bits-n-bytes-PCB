@@ -678,13 +678,17 @@
         "uuid": "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55"
       }
     ],
-    "used_designators": "#PWR1",
+    "used_designators": "#PWR1,J1,U1",
     "variants": []
   },
   "sheets": [
     [
       "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55",
       "jetson-hat"
+    ],
+    [
+      "d97c0851-c8a9-44f3-9c26-36f29255f6e6",
+      "jetson-board"
     ]
   ],
   "text_variables": {},

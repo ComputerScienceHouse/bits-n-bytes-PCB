@@ -173,6 +173,13 @@ that translates the UART through the SPI or I2C lines.
     A way more professional solution than the UART->USB
 
 
+An STM32 can be used for this, but it would require writting Firmware and flashing to it.
+  This has the benefit of being cheap, like $1-2 for the STM, but has the downside that we would need to code it.
+
+There are specialty chips: https://jlcpcb.com/partdetail/NxpSemicon-SC16IS752IPW112/C515281
+  That are designed for briding UART and I2C/SPI, but it costs more since they're a more niche usecase.:w
+
+I am leaning towards spending the extra 3-4 freedom dabloons if it means less trouble later.
 
 
 
