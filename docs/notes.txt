@@ -1,0 +1,200 @@
+PI 4B 40 Pin Expansion Header:
+
+UART
+TXD0 : 14
+RXD0 : 15
+
+TXD1 : 14
+RXD1 : 15
+
+TXD2 : 0
+RXD2 : 1
+
+TXD3 : 4
+RXD3 : 5
+
+TXD4 : 8
+RXD4 : 9
+
+TXD5 : 12
+RXD5 : 13
+
+
+I2C
+SDA0 : 0
+SCL0 : 1
+
+SDA1 : 2
+SCL1 : 3
+
+SDA3 : 2
+SCL3 : 3
+SDA3 : 4
+SCL3 : 5
+
+SDA4 : 6
+SCL4 : 7
+SDA4 : 8
+SCL4 : 9
+
+SDA5 : 10
+SCL5 : 11
+SDA5 : 12
+SCL5 : 13
+
+SDA6 : 0
+SCL6 : 0
+SDA6 : 22
+SCL6 : 23
+
+0,1 = SDA0
+2,3 = SDA1
+4,5 = SDA3
+6,7 = SDA4
+10,11 = SDA5
+22,23 = SDA6
+
+
+
+SPI
+7 High SPI0 CE1 N SWE N DPI D3 SPI4 SCLK RTS3 SCL4
+8 High SPI0 CE0 N SD0 DPI D4 - TXD4 SDA4
+9 Low SPI0 MISO SD1 DPI D5 - RXD4 SCL4
+10 Low SPI0 MOSI SD2 DPI D6 - CTS4 SDA5
+11 Low SPI0 SCLK SD3 DPI D7 - RTS4 SCL5
+
+16 Low FL0 SD8 DPI D12 CTS0 SPI1 CE2 N CTS1
+17 Low FL1 SD9 DPI D13 RTS0 SPI1 CE1 N RTS1
+18 Low PCM CLK SD10 DPI D14 SPI6 CE0 N SPI1 CE0 N PWM0
+19 Low PCM FS SD11 DPI D15 SPI6 MISO SPI1 MISO PWM1
+20 Low PCM DIN SD12 DPI D16 SPI6 MOSI SPI1 MOSI GPCLK0
+21 Low PCM DOUT SD13 DPI D17 SPI6 SCLK SPI1 SCLK GPCLK1
+
+0 High SDA0 SA5 PCLK SPI3 CE0 N TXD2 SDA6
+1 High SCL0 SA4 DE SPI3 MISO RXD2 SCL6
+2 High SDA1 SA3 LCD VSYNC SPI3 MOSI CTS2 SDA3
+3 High SCL1 SA2 LCD HSYNC SPI3 SCLK RTS2 SCL3
+
+4 High GPCLK0 SA1 DPI D0 SPI4 CE0 N TXD3 SDA3
+5 High GPCLK1 SA0 DPI D1 SPI4 MISO RXD3 SCL3
+6 High GPCLK2 SOE N DPI D2 SPI4 MOSI CTS3 SDA4
+7 High SPI0 CE1 N SWE N DPI D3 SPI4 SCLK RTS3 SCL4
+
+4 Low SD0 DAT0 SD16 DPI D20 SD1 DAT0 ARM TDO SPI3 CE1 N
+25 Low SD0 DAT1 SD17 DPI D21 SD1 DAT1 ARM TCK SPI4 CE1 N
+26 Low SD0 DAT2 TE0 DPI D22 SD1 DAT2 ARM TDI SPI5 CE1 N
+27 Low SD0 DAT3 TE1 DPI D23 SD1 DAT3 ARM TMS SPI6 CE1 N
+
+
+
+Jetson 40 Pin Connector
+
+UART
+UART1_TXD : 8
+UART1_RXD : 10
+
+
+I2C
+SDA0 : 27
+SCL0 : 28
+
+SDA1 : 3
+SCL1 : 5
+
+
+SPI
+there 2
+
+
+
+
+ATLAS ESP
+
+UART
+u1RXD : SD2
+
+u2TXD : IO17
+u2RXD : IO16
+
+u0TXD : TXD
+u1RXD : RXD
+
+
+I2C
+SDA0 : IO21
+SCL0 : IO22
+
+
+
+
+
+
+
+
+=========
+
+
+=============
+MOLEX
+Mini-Fit JR 5566
+FEMALE
+https://www.digikey.com/en/products/detail/molex/0039012020/61315
+Mini-Fit JR 5557
+MALE
+https://www.digikey.com/en/products/detail/molex/0039281023/61397
+
+
+
+ADD: ESD PROTECTION TO THE BOARDS
+
+
+
+Jetson Orin Nano Dev Kit:
+https://dam-cdn.nvd.orangelogic.com/AssetLink/2ug686w80406gxf6q8uv7r3l7265m2n8.pdf
+103mm x 90.5mm x 34.77mm
+
+Jetson HAT PLAN:
+
+Not enough UART, want more UART.
+This can be done by doing UART through SPI / I2C, there can be an STM32 on the HAT
+that translates the UART through the SPI or I2C lines.
+  What does this do?
+    Altas code remains the same, still communicates through UART
+    STM32 handles the transfer from UART -> SPI or I2C
+    Jetson has code that breaks the data down from SPI or I2C into whatever it needs.
+  
+  Why this over what is currently being done?
+    Currently we are connecting two USB->UART peripherals to the Jetson.
+    This is dumb, USB is like important, and can sooo much more than just one UART.
+    Current solution is also ugly
+    This steamlines everything into the HAT, looks more professional, and the code
+    changes wouldn't be severe, just have the STM32 send the data in a nice format
+    like JSON, and read from it, just like how the UART is doing it.
+    A way more professional solution than the UART->USB
+
+
+An STM32 can be used for this, but it would require writting Firmware and flashing to it.
+  This has the benefit of being cheap, like $1-2 for the STM, but has the downside that we would need to code it.
+
+There are specialty chips: https://jlcpcb.com/partdetail/NxpSemicon-SC16IS752IPW112/C515281
+  That are designed for briding UART and I2C/SPI, but it costs more since they're a more niche usecase.:w
+
+I am leaning towards spending the extra 3-4 freedom dabloons if it means less trouble later.
+
+
+
+SC16IS752 WIRING
+
+- Only need TXA/B,RXA/B for UART, other stuff can be ignored
+- XTAL1, XTAL2 is frq crystal, gonna need to figure that out
+- The SPI pins are just going to the coresponding pins from the header
+
+- I2C/SPI pin should be grounded for SPI
+- IRQ is an interrupt pin, tie to a GPIO
+
+
+
+
+
+
+
