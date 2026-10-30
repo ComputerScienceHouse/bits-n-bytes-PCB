@@ -193,7 +193,8 @@ SC16IS752 WIRING
 - IRQ is an interrupt pin, tie to a GPIO
 
 
-
+crystal oscillator - SJK 6A01843AG20UCD
+https://www.lcsc.com/product-detail/C47345430.html
 
 
 
