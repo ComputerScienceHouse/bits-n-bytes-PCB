@@ -195,7 +195,10 @@ SC16IS752 WIRING
 
 crystal oscillator - SJK 6A01843AG20UCD
 https://www.lcsc.com/product-detail/C47345430.html
+SJK 6A01843AG20UCD
+Absolutely Ginormous
 
 
-
-
+HCI XC53G2-8.000-F12NJHP
+This is what i will use
+https://www.lcsc.com/product-detail/C2842269.html
