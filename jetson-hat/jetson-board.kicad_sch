@@ -3388,7 +3388,7 @@
 		)
 		(uuid "f688c369-af02-4222-80a1-0a3e04b02399")
 	)
-	(text "ISC1"
+	(text "I2C1"
 		(exclude_from_sim no)
 		(at 245.872 97.79 0)
 		(effects
@@ -3399,7 +3399,7 @@
 		)
 		(uuid "0c660032-73be-455c-bb1e-d3d15d85e798")
 	)
-	(text "UART1"
+	(text "UART-A"
 		(exclude_from_sim no)
 		(at 207.772 73.66 0)
 		(effects
@@ -3431,7 +3431,7 @@
 		)
 		(uuid "7809c1cc-9cc5-448f-b4b4-4894cb5af45a")
 	)
-	(text "ISC0"
+	(text "I2C0"
 		(exclude_from_sim no)
 		(at 207.772 97.79 0)
 		(effects
@@ -3453,7 +3453,7 @@
 		)
 		(uuid "d11012eb-2817-4172-8433-7601c9a219f4")
 	)
-	(text "UART1"
+	(text "UART-B"
 		(exclude_from_sim no)
 		(at 245.872 73.66 0)
 		(effects
@@ -4777,7 +4777,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x02_Pin"
+		(property "Value" "UART-1 GPIO[8,10]"
 			(at 229.108 55.88 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4934,7 +4934,7 @@
 				)
 			)
 		)
-		(property "Value" "LED"
+		(property "Value" "LED-RED"
 			(at 258.318 127 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5181,7 +5181,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x02_Pin"
+		(property "Value" "I2C-0"
 			(at 210.058 104.14 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5610,7 +5610,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x02_Pin"
+		(property "Value" "UART-B"
 			(at 248.158 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6076,7 +6076,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "837d6051-6035-4987-a720-96f18c7a0851")
 		(property "Reference" "SW1"
 			(at 219.71 127 0)
@@ -6088,8 +6087,8 @@
 				)
 			)
 		)
-		(property "Value" "SW_Push"
-			(at 219.71 129.54 0)
+		(property "Value" "BUTTON GPIO[13]"
+			(at 217.932 129.54 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6486,7 +6485,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x02_Pin"
+		(property "Value" "UART-A"
 			(at 210.058 80.01 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6646,7 +6645,7 @@
 				)
 			)
 		)
-		(property "Value" "Conn_01x02_Pin"
+		(property "Value" "I2C-1"
 			(at 248.158 104.14 0)
 			(show_name no)
 			(do_not_autoplace no)
